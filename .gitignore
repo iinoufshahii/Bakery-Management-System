@@ -2,6 +2,8 @@ build/
 dist/
 nbproject/private/
 nbproject/private.xml
+docx-media/
+PRG2201 Group Assignment (I21020794 & I21020791).docx
 *.log
 *.class
 *.jar

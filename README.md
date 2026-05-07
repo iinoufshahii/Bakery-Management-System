@@ -10,15 +10,55 @@ The project is organized as a modular desktop system with role-based dashboards 
 
 ## Screenshots
 
-The following sample UI screenshots were extracted from the assignment document included in the workspace.
+The screenshots below are ordered to match the main user flow through the application, using images extracted from the assignment document included in the workspace.
+
+### Entry Flow
 
 | Screen | Preview |
 | --- | --- |
 | Splash | ![Splash screen](screenshots/splash.png) |
 | Login | ![Login screen](screenshots/login.png) |
+| Sign up | ![Signup screen](screenshots/signup.png) |
+
+### Customer Flow
+
+| Screen | Preview |
+| --- | --- |
 | Customer dashboard | ![Customer dashboard](screenshots/customer-dashboard.png) |
-| Cashier screen | ![Cashier screen](screenshots/cashier-screen.png) |
+| Personal information | ![Personal information](screenshots/customer-personal-info.png) |
+| Order tracking | ![Order tracking](screenshots/customer-order-tracking.png) |
+| Product review | ![Product review](screenshots/customer-product-review.png) |
+
+### Cashier Flow
+
+| Screen | Preview |
+| --- | --- |
+| Cashier home | ![Cashier home](screenshots/cashier-screen.png) |
+| POS | ![POS](screenshots/cashier-pos.png) |
+| Product display | ![Product display](screenshots/cashier-product-display.png) |
+| Discount management | ![Discount management](screenshots/cashier-discount.png) |
+| Reporting | ![Reporting](screenshots/cashier-reporting.png) |
+
+### Baker Flow
+
+| Screen | Preview |
+| --- | --- |
 | Baker dashboard | ![Baker dashboard](screenshots/baker-dashboard.png) |
+| Recipe management | ![Recipe management](screenshots/baker-recipe-management.png) |
+| Production records | ![Production records](screenshots/baker-production-records.png) |
+| Equipment management | ![Equipment management](screenshots/baker-equipment-management.png) |
+
+### Manager Flow
+
+| Screen | Preview |
+| --- | --- |
+| Manager dashboard | ![Manager dashboard](screenshots/manager-dashboard.png) |
+| User management | ![User management](screenshots/manager-user-management.png) |
+| Order management | ![Order management](screenshots/manager-order-management.png) |
+| Finance dashboard | ![Finance dashboard](screenshots/manager-finance-dashboard.png) |
+| Inventory management - products | ![Inventory products](screenshots/manager-inventory-products.png) |
+| Inventory management - ingredients | ![Inventory ingredients](screenshots/manager-inventory-ingredients.png) |
+| Feedback management | ![Feedback management](screenshots/manager-feedback.png) |
 
 ## Main Features
 
