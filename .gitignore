@@ -1,0 +1,11 @@
+build/
+dist/
+nbproject/private/
+nbproject/private.xml
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.DS_Store
