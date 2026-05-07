@@ -8,6 +8,18 @@ The application appears to be centered around the bakery brand name **Homely Tre
 
 The project is organized as a modular desktop system with role-based dashboards and database-driven forms for common bakery operations such as products, carts, orders, inventory, recipes, equipment, discounts, finance, and feedback.
 
+## Screenshots
+
+The following sample UI screenshots were extracted from the assignment document included in the workspace.
+
+| Screen | Preview |
+| --- | --- |
+| Splash | ![Splash screen](screenshots/splash.png) |
+| Login | ![Login screen](screenshots/login.png) |
+| Customer dashboard | ![Customer dashboard](screenshots/customer-dashboard.png) |
+| Cashier screen | ![Cashier screen](screenshots/cashier-screen.png) |
+| Baker dashboard | ![Baker dashboard](screenshots/baker-dashboard.png) |
+
 ## Main Features
 
 - Splash screen with loading progress
@@ -32,6 +44,7 @@ The project is organized as a modular desktop system with role-based dashboards 
 - `src/Baker/` - baker dashboard, recipes, inventory checks, equipment, and production records
 - `src/Manager/` - manager dashboard and management screens
 - `src/Images/` - image assets used by the UI
+- `screenshots/` - sample UI screenshots extracted from the assignment document
 - `build.xml` - Apache Ant build script used by NetBeans
 - `manifest.mf` - application manifest
 
