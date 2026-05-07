@@ -1,16 +1,176 @@
 # Bakery Management System
 
-Bakery Management System is a Java Swing desktop application built in NetBeans for managing a bakery business. It supports separate workflows for customers, cashiers, bakers, and managers, with MySQL used as the backend database.
+A role-based desktop **Bakery Management System** developed as an **Object-Oriented Programming (OOP) university project** using **Java Swing** and **MySQL**.
 
-## Overview
+This system models real bakery operations for the brand **Homely Treats**, including customer ordering, cashier sales, baker production workflows, and manager-level administration.
 
-The application appears to be centered around the bakery brand name **Homely Treats**. It starts with a splash screen, then opens a login screen where users choose a role and sign in. Customers can register through the signup screen, while staff users log in through the shared authentication flow.
+---
 
-The project is organized as a modular desktop system with role-based dashboards and database-driven forms for common bakery operations such as products, carts, orders, inventory, recipes, equipment, discounts, finance, and feedback.
+## 1) Project Overview
 
-## Screenshots
+The application is a multi-module Java desktop solution where each role interacts with dedicated screens and workflows:
 
-The screenshots below are ordered to match the main user flow through the application, using images extracted from the assignment document included in the workspace.
+- **Customer**: register, browse products, manage cart, place orders, track orders, and submit reviews.
+- **Cashier**: run POS operations, manage discounts, and generate sales reports.
+- **Baker**: maintain recipes, production records, ingredient checks, and equipment status.
+- **Manager**: manage users, orders, inventory, finance metrics, and feedback moderation.
+
+The project demonstrates practical OOP design through modular package structure, class-based UI forms, and database-driven operations with JDBC.
+
+---
+
+## 2) Core Objectives
+
+- Build a complete desktop CRUD system for bakery operations.
+- Apply OOP concepts in a real-world business scenario.
+- Integrate Java Swing front-end with a relational MySQL database.
+- Support role-based access and responsibilities.
+- Practice software modularity, maintainability, and UI-event handling.
+
+---
+
+## 3) Technology Stack
+
+- **Language:** Java
+- **UI Framework:** Java Swing / AWT
+- **IDE/Project Style:** Apache NetBeans (Ant project)
+- **Database:** MySQL
+- **Database Access:** JDBC with MySQL Connector/J
+- **Build Tool:** Apache Ant (`build.xml`)
+
+---
+
+## 4) Project Structure
+
+- `/src/bakerymanagementsystem/`  
+  Application entry flow: `Splash`, `Login`, `SignUp`
+- `/src/Customer/`  
+  Customer dashboard, cart, personal info, order tracking, reviews
+- `/src/Cashier/`  
+  Cashier main page, POS, product display, discounts, reporting
+- `/src/Baker/`  
+  Baker dashboard, recipes, inventory checks, production records, equipment
+- `/src/Manager/`  
+  Manager dashboard, users, orders, inventory, finance, feedback
+- `/src/Images/` and `/src/images/`  
+  UI image assets
+- `/screenshots/`  
+  UI previews used in documentation
+- `build.xml`  
+  Ant build/test/run configuration
+- `manifest.mf`  
+  JAR manifest
+
+---
+
+## 5) Application Flow
+
+1. `Splash` displays loading sequence.
+2. `Login` authenticates credentials and selected role.
+3. New customers create accounts through `SignUp`.
+4. On successful login, users are redirected to role-specific dashboards:
+   - Customer → `CustDashboard`
+   - Cashier → `Mainpage`
+   - Baker → `BakerDashboard`
+   - Manager → `ManagerDashboard`
+
+---
+
+## 6) Functional Modules (Detailed)
+
+### Customer Module
+- Product browsing and cart operations
+- Order placement and tracking
+- Personal profile updates
+- Product review submission
+
+### Cashier Module
+- POS cart and checkout handling
+- Discount management
+- Product listing support
+- Report generation for sales insights
+
+### Baker Module
+- Recipe management (add/update/delete)
+- Ingredient/stock checks
+- Production record maintenance
+- Equipment status management
+
+### Manager Module
+- User/staff management
+- Order status management
+- Inventory management for products and ingredients
+- Finance dashboard (orders, revenue, expenses)
+- Customer feedback review and moderation
+
+---
+
+## 7) Database Integration
+
+The system uses direct JDBC connections in multiple modules.
+
+### Current configured local connection in source code
+- **Driver:** `com.mysql.cj.jdbc.Driver`
+- **URL:** `jdbc:mysql://localhost:3306/homely_treats`
+- **Username:** `root`
+- **Password:** `1234`
+
+### Main tables referenced by the application
+- `customer`
+- `users`
+- `products`
+- `ingredients`
+- `recipes`
+- `production`
+- `equipment`
+- `orders`
+- `order_details`
+- `cartmanage`
+- `managediscount`
+- `transactions`
+- `productreview`
+
+---
+
+## 8) OOP Concepts Demonstrated
+
+- **Encapsulation:** module data and logic encapsulated in class-based forms.
+- **Abstraction:** role-focused modules hide implementation complexity from end users.
+- **Inheritance:** UI classes extend `javax.swing.JFrame` and use Swing component hierarchies.
+- **Polymorphism/Event Handling:** action listeners and mouse listeners trigger context-specific runtime behavior.
+- **Modularity:** separation by package supports maintainability and code organization.
+
+---
+
+## 9) How to Run
+
+1. Install JDK and MySQL Server.
+2. Open the project in Apache NetBeans.
+3. Ensure the database `homely_treats` exists.
+4. Create/import required tables used by modules.
+5. Add MySQL Connector/J to project libraries if missing.
+6. Build and run the project from NetBeans.
+
+---
+
+## 10) Build and Test
+
+This is an Ant-based project.
+
+Common commands:
+
+```bash
+ant clean
+ant compile
+ant test
+ant run
+```
+
+> Note: In this environment, Ant compile/test may fail if local JDK version does not match the target release configured in NetBeans project properties.
+
+---
+
+## 11) Screenshots
 
 ### Entry Flow
 
@@ -60,131 +220,34 @@ The screenshots below are ordered to match the main user flow through the applic
 | Inventory management - ingredients | ![Inventory ingredients](screenshots/manager-inventory-ingredients.png) |
 | Feedback management | ![Feedback management](screenshots/manager-feedback.png) |
 
-## Main Features
+---
 
-- Splash screen with loading progress
-- Login and customer signup flow
-- Role-based navigation for:
-  - Customer
-  - Cashier
-  - Baker
-  - Manager
-- Product browsing and cart management for customers
-- Order tracking and personal information management for customers
-- Point-of-sale and reporting features for cashiers
-- Discount management for cashiers
-- Recipe, inventory, equipment, and production tracking for bakers
-- User, order, finance, inventory, and feedback management for managers
+## 12) Known Limitations
 
-## Project Structure
+- Database credentials are hardcoded in multiple files.
+- Database connection logic is repeated across modules.
+- Passwords are handled as plain text.
+- No SQL initialization/migration script is included.
 
-- `src/bakerymanagementsystem/` - splash screen, login, and signup
-- `src/Customer/` - customer dashboard and customer-facing modules
-- `src/Cashier/` - cashier dashboard, POS, products, discounts, and reporting
-- `src/Baker/` - baker dashboard, recipes, inventory checks, equipment, and production records
-- `src/Manager/` - manager dashboard and management screens
-- `src/Images/` - image assets used by the UI
-- `screenshots/` - sample UI screenshots extracted from the assignment document
-- `build.xml` - Apache Ant build script used by NetBeans
-- `manifest.mf` - application manifest
+---
 
-## Technology Stack
+## 13) Future Improvements
 
-- Java
-- Swing / AWT for the desktop UI
-- NetBeans GUI Builder generated forms
-- MySQL database
-- MySQL Connector/J JDBC driver
+- Centralize DB configuration and connection utility class.
+- Introduce password hashing and stronger authentication.
+- Add input validation and error-handling standardization.
+- Implement DAO/service layers to reduce duplication.
+- Add automated tests and CI checks.
+- Add database setup script for quick deployment.
 
-## Database Setup
+---
 
-The source code currently connects to a local MySQL database using these hardcoded values:
+## 14) Academic Note
 
-- Host: `localhost`
-- Port: `3306`
-- Database: `homely_treats`
-- User: `root`
-- Password: `1234`
+This project was developed for academic learning to demonstrate OOP, GUI development, and database integration in Java.
 
-The application uses the MySQL driver class `com.mysql.cj.jdbc.Driver`.
+---
 
-If you want to run the project on another machine or with different credentials, update the JDBC connection strings in the Java files that open database connections.
+## 15) License
 
-## Requirements
-
-- JDK installed and configured in NetBeans
-- Apache NetBeans or another IDE that can open Ant-based Java projects
-- MySQL Server
-- MySQL Connector/J added to the project libraries
-
-If you are reopening the project in NetBeans, place the external JARs in `lib/` or update the project libraries to match your environment.
-
-## How To Run
-
-1. Open the project in NetBeans.
-2. Restore or create the MySQL database named `homely_treats`.
-3. Make sure the tables used by the application exist in that database.
-4. Add the MySQL Connector/J library if it is not already included.
-5. Run the project from NetBeans.
-
-The main application flow starts from the splash screen and then opens the login window.
-
-## Application Flow
-
-1. `Splash` shows a loading screen.
-2. `Login` allows the user to sign in by role.
-3. Customers can create an account from `SignUp`.
-4. After login, the user is redirected to the appropriate dashboard:
-   - Customer dashboard
-   - Cashier main page
-   - Baker dashboard
-   - Manager dashboard
-
-## Role Summary
-
-### Customer
-
-- Browse products
-- Manage cart and orders
-- View and update personal information
-- Track order status
-
-### Cashier
-
-- Access POS
-- View products
-- Manage discounts
-- Generate reports
-
-### Baker
-
-- Manage recipes
-- Check inventory
-- Track production records
-- Manage equipment
-
-### Manager
-
-- Manage users
-- Manage orders
-- Review finance data
-- Manage inventory
-- Review feedback
-
-## Notes
-
-- The project is built as a desktop application, not a web app.
-- Several screens connect directly to MySQL, so the database must be available before running the app.
-- The current credentials and schema assumptions are development-focused and should be secured before production use.
-
-## Suggested Improvements
-
-- Move database credentials into a configuration file or environment variables
-- Add a database initialization script
-- Replace hardcoded paths and repeated connection code with a shared utility class
-- Add validation and password security improvements
-- Add a README section with screenshots once the UI is finalized
-
-## License
-
-No license information was provided in the project files.
+No explicit license file is currently included in this repository.
